@@ -65,8 +65,11 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public List<BookDTO> getBookByAuthorName(String authorName) {
-		return ((List<Book>)
-				bookRepository.getBookByAuthorName(authorName)).stream().map(this::convertDataIntoDTO).collect(Collectors.toList());
+		return 
+				bookRepository.getBookByAuthorName(authorName)
+				.stream()
+				.map(this::convertDataIntoDTO)
+				.collect(Collectors.toList());
 	}
 
 	
@@ -89,4 +92,15 @@ public class BookServiceImpl implements BookService {
 		return dto;
 		
 	}
+
+	@Override
+	public List<BookDTO> getBookByCategoryOrPriceOrAuthorName(String category,Integer price,String authorName) {
+		
+		return 
+				bookRepository.getBookByCategoryOrPriceOrAuthorName(category,price,authorName)
+				.stream()
+				.map(this::convertDataIntoDTO)
+				.collect(Collectors.toList());
+	}
+
 }

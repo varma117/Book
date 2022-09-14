@@ -23,4 +23,6 @@ public interface BookService  {
 		public List<BookDTO> getBookByPrice(Integer price);
 		
 		public List<BookDTO> getBookByAuthorName(String authorName);
+		
+		public List<BookDTO> getBookByCategoryOrPriceOrAuthorName(String category,Integer price,String authorName);
 }
