@@ -15,9 +15,12 @@ public interface BookService  {
 
 	 public Book editBook(Book book,Long id);
 		
-	 public List<Book> getAllBooks();
+	 public List<Book> getBooks();
 	 
 	 
+	 
+	    public List<BookDTO> getAllBooks();
+	    
 	    public List<BookDTO> getBookByCategory(String category);
 		
 		public List<BookDTO> getBookByPrice(Integer price);

@@ -27,7 +27,7 @@ public class Book {
 	
 	private String publisher;
 	
-	private Date publishedDate;
+	private Date publishedDate = new Date();
 	
 	private String content;
 	

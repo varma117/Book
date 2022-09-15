@@ -45,7 +45,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<Book> getAllBooks() {
+	public List<Book> getBooks() {
 		
 		return bookRepository.findAll();
 	}
@@ -102,5 +102,13 @@ public class BookServiceImpl implements BookService {
 				.map(this::convertDataIntoDTO)
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<BookDTO> getAllBooks() {
+		
+		return bookRepository.findAll().stream().map(this::convertDataIntoDTO).collect(Collectors.toList());
+	}
+
+	
 
 }
